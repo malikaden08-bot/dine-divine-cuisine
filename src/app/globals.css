@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-subheading: "Poppins", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff8f1;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn-gradient {
+  background-image: linear-gradient(135deg, #b91c1c 0%, #ea580c 100%);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.btn-gradient:hover {
+  filter: saturate(1.08) brightness(1.04);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgb(185 28 28 / 25%);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+.glass-panel-dark {
+  border: 1px solid rgb(255 255 255 / 14%);
+  background: rgb(30 30 30 / 64%);
+  box-shadow: 0 24px 70px rgb(0 0 0 / 24%);
+  backdrop-filter: blur(18px);
+}
+
+.steam-particle,
+.steam-particle-delayed {
+  animation: steam-rise 2.2s ease-in-out infinite;
+}
+
+.steam-particle-delayed {
+  animation-delay: 700ms;
+}
+
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0) scaleX(0.8);
+  }
+  40% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(5px, -24px, 0) scaleX(1.2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
